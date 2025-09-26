@@ -1,5 +1,5 @@
 # ActLCD: Active Layer-Contrastive Decoding  
-**Official implementation for EMNLP 2025 "Active Layer-Contrastive Decoding Reduces Hallucination in Large Language Model Generation"**
+**Official implementation for EMNLP 2025 Main "Active Layer-Contrastive Decoding Reduces Hallucination in Large Language Model Generation"**
 
 [Paper (arXiv)](https://arxiv.org/pdf/2505.23657) · [Project site](https://actlcd.github.io/)
 
