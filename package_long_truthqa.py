@@ -139,11 +139,11 @@ def load_dataset(path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-name", type=str, default="meta-llama/Llama-3.1-8B-Instruct")
+    parser.add_argument("--model-name", type=str, default="meta-llama/Llama-3.1-8B-Instruct", help="Specifies the model you want to use")
     parser.add_argument("--num-gpus", type=str, default="1")
     parser.add_argument("--max-gpu-memory", type=int, default=48)
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--output-path", type=str, default="./results/tfqa_result")
+    parser.add_argument("--output-path", type=str, default="./results/tfqa_result.json")
     parser.add_argument("--data-path", type=str, default="./eva_dataset/TruthfulQA.csv/TruthfulQA.csv")
     parser.add_argument("--early-exit-layers", type=str, choices=['-1','low','high'], default="low", help="'-1' for greedy decoding. low/high for DoLa/ActLCD")
     parser.add_argument("--debug", action="store_true")
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     parser.add_argument("--temperature", type=float, default=0.9)
     parser.add_argument("--repetition_penalty", type=float, default=None)
     parser.add_argument("--relative_top", type=float, default=0.1)
-    parser.add_argument("--loaded-model-name", type=str, default="./model/llama_bcq_qa.pth", help="Enable for ActLCD: Path to the BCQ model otherwise set as '-1'")
+    parser.add_argument("--loaded-model-name", type=str, default="./model/llama_bcq_qa.pth", help="Only for ActLCD: Path to the BCQ model, otherwise set as '-1'. Naming logic: <MODEL NAME>_bcq_<BENCHMARK>-<PREMATURE LAYER>.pth")
     args = parser.parse_args()
     model_name = args.model_name
     num_gpus = args.num_gpus

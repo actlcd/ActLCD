@@ -161,11 +161,11 @@ def clean_answer(model_pred, random_guess=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-name", type=str, default="meta-llama/Llama-3.1-8B-Instruct")
+    parser.add_argument("--model-name", type=str, default="meta-llama/Llama-3.1-8B-Instruct", help="Specifies the model you want to use")
     parser.add_argument("--num-gpus", type=str, default="1")
     parser.add_argument("--max_gpu_memory", type=int, default=48)
     parser.add_argument("--device", type=str, default="cuda")
-    parser.add_argument("--output-path", type=str, default="./results/strqa_result")
+    parser.add_argument("--output-path", type=str, default="./results/strqa_result.json")
     parser.add_argument("--early-exit-layers", type=str, choices=['-1','low','high'], default="low", help="'-1' for greedy decoding. low/high for DoLa/ActLCD")
     parser.add_argument("--max-new-tokens", type=int, default=256)
     parser.add_argument("--top_p", type=float, default=0.95)
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     parser.add_argument("--relative_top", type=float, default=0.1)
     parser.add_argument("--do_shuffle", action="store_true")
     parser.add_argument("--debug", action="store_true")
-    parser.add_argument("--loaded-model-name", type=str, default="./model/llama_bcq_strqa-low.pth", help="Enable for ActLCD: Path to the BCQ model otherwise set as '-1'")
+    parser.add_argument("--loaded-model-name", type=str, default="./model/llama_bcq_strqa-low.pth", help="Only for ActLCD: Path to the BCQ model, otherwise set as '-1'. Naming logic: <MODEL NAME>_bcq_<BENCHMARK>-<PREMATURE LAYER>.pth")
     
     args = parser.parse_args()
     model_name = args.model_name
