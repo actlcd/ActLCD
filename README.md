@@ -3,7 +3,6 @@
 
 [Paper (arXiv)](https://arxiv.org/pdf/2505.23657) · [Project site](https://actlcd.github.io/)
 
----
 
 ## 📝 Abstract
 
@@ -15,7 +14,6 @@ Novel Decoding Strategy: ActLCD introduces a new method for text generation that
 Reinforcement Learning Framework: A reinforcement learning agent learns to decide when to apply the contrastive decoding layers, optimizing for long-term factuality.
 
 State-of-the-Art Performance: ActLCD outperforms existing methods in reducing hallucinations on a wide range of benchmarks.
----
 
 ## 🛠️ Installation
 To get started with ActLCD, clone the repository and install the required dependencies:
@@ -77,10 +75,10 @@ python strqa_eval.py --model-name meta-llama/Llama-3.1-8B-Instruct --output-path
 ## 📜 Citation
 If you find our work useful, please consider citing our paper:
 ```
-@inproceedings{zhang2025actlcd,
-  title={ActLCD: Active Layer-Contrastive Decoding Reduces Hallucination in Large Language Model Generation},
-  author={Zhang, Tianyi and and Chen, Hao and Chen, Muhao},
-  booktitle={International Conference on Learning Representations},
+@article{zhang2025active,
+  title={Active Layer-Contrastive Decoding Reduces Hallucination in Large Language Model Generation},
+  author={Zhang, Hongxiang and Chen, Hao and Chen, Muhao and Zhang, Tianyi},
+  journal={arXiv preprint arXiv:2505.23657},
   year={2025}
 }
 ```
