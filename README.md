@@ -24,6 +24,7 @@ pip install accelerate
 pip install openai # -> only for evaluation
 ```
 ## Repository Overview
+```
 ActLCD/
 ├── eva_dataset/ # evaluation dataset setup / scripts
 ├── model/ # model / policy components
@@ -33,6 +34,7 @@ ActLCD/
 ├── package_long_truthqa.py # script for **package hallucination & LongFact & TruthfulQA**
 ├── strqa_eval.py # script for **StrategyQA**
 └── README.md
+```
 
 ## Quick Start
 ### Baseline
